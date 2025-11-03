@@ -45,5 +45,31 @@ public class BankAccount {
 		this.pinCode = pinCode;
 	}
 	
+	public void deposit(double amount) {
+	    if (amount >= 1000) {
+	        this.savingsAccount += amount;
+	        System.out.println("Deposit successful! New balance: ₱" + this.savingsAccount);
+	    } else {
+	        System.out.println("The deposit must be at least ₱1000");
+	    }
+	}
 	
+	public void withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid amount!");
+        } else if (amount > this.savingsAccount) {
+            System.out.println("Insufficient funds! Current balance: ₱" + this.savingsAccount);
+        } else {
+            this.savingsAccount -= amount;
+            System.out.println("Withdrawal successful! New balance: ₱" + this.savingsAccount);
+        }
+    }
+	
+	public void DisplayInfo() {
+		System.out.println();
+		System.out.println("Account Id: " + this.accountId);
+		System.out.println("Account name: " + this.accountName);
+		System.out.println("Account savings: " + this.savingsAccount);
+		System.out.println();
+	}
 }
