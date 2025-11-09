@@ -24,39 +24,31 @@ public class Controller {
         deleteUserAccount = new Delete();
     }
 
-    // Admin login
-    public boolean authenticateAdmin(String username, String password) {
-        LoginModel admin = new LoginModel(username, password);
-        return adminLogin.AdminLogin(admin.getUsername(), admin.getPassword());
+    public LoginModel loginAdmin(String username, String password) {
+        return adminLogin.AdminLogin(username, password);
     }
 
-    // User login
-    public boolean authenticateUser(String pinCode) {
-        LoginModel user = new LoginModel(pinCode);
+    public BankAccount loginUser(String pinCode) {
         return userLogin.UserLogin(pinCode);
     }
 
-    // Register new account
     public void RegisterAccount(BankAccount account) {
         registerUser.AddAcount(account);
     }
 
-    // View all accounts
     public void ViewAllAccounts() {
         viewAllAccounts.ViewAllAccounts();
     }
 
-    // Find account by ID
     public BankAccount FindByAccountId(int accountId) {
         return findId.FindAccountById(accountId);
     }
 
-    // Update account balance in database
     public void UpdateAccount(BankAccount account) {
-    	updateAccountSaving.UpdateAccount(account);
+        updateAccountSaving.UpdateAccount(account);
     }
-    
+
     public void DeleteAccount(int accountId) {
-    	deleteUserAccount.DeleteUser(accountId);
+        deleteUserAccount.DeleteUser(accountId);
     }
 }

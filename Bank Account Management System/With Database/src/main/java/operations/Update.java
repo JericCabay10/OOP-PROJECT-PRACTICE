@@ -2,6 +2,7 @@ package operations;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import database.Database;
@@ -30,4 +31,5 @@ public class Update {
             System.out.println("Database error: " + e.getMessage());
         }
     }
+
 }

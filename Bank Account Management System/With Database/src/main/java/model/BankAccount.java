@@ -11,6 +11,7 @@ public class BankAccount {
 		this.accountId = accountId;
 		this.accountName = accountName;
 		this.savingsAccount = savingsAccount;
+		this.pinCode = pinCode;
 	}
 	
 	//Second Constructor
